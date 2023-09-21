@@ -1,12 +1,18 @@
 import Answer from "./Answer";
-import Image from "../Image/Image"
+import questionsData from "../../data/questions.json";
 
 function Question() {
+  const indexToShow = 0;
+  const currentQuestion = questionsData.questions[indexToShow];
+  const answers = currentQuestion.answer;
+
   return (
     <section>
-      <Image />
-      <div>Question</div>
-      <Answer />
+      <div>
+        <p>{currentQuestion.question}</p>
+      </div>
+
+      <Answer answers={answers} correctAnswerId={currentQuestion.correctAnswerId} />
     </section>
   );
 }
