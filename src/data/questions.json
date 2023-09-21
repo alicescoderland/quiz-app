@@ -1,0 +1,50 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "question": "What is the capital of Turkey?",
+        "answer": [
+          {
+            "id": 1,
+            "answer": "Antalya"
+          },
+          {
+            "id": 2,
+            "answer": "Ankara"
+          },
+          {
+            "id": 3,
+            "answer": "Konya"
+          },
+          {
+            "id": 4,
+            "answer": "Istanbul"
+          }
+        ],
+        "correctAnswerId": 2
+      },
+      {
+        "id": 2,
+        "question": "Who wrote the novel 'Crime and Punishment?",
+        "answer": [
+          {
+            "id": 1,
+            "answer": "William Shakespeare"
+          },
+          {
+            "id": 2,
+            "answer": "Fiodor Dostojewski"
+          },
+          {
+            "id": 3,
+            "answer": "Leo Tolstoj"
+          },
+          {
+            "id": 4,
+            "answer": "Charles Dickens"
+          }
+        ],
+        "correctAnswerId": 2
+      }
+    ]
+  }
