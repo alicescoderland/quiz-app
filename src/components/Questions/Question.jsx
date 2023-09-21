@@ -1,8 +1,12 @@
+import Answer from "./Answer";
+import Image from "../Image/Image"
 
 function Question() {
   return (
     <section>
-      <div>Example</div>
+      <Image />
+      <div>Question</div>
+      <Answer />
     </section>
   );
 }
