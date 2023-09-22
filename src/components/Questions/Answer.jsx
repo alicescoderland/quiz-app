@@ -1,6 +1,10 @@
-function Answer({ answer, handleClick, checked, isCorrect, clicked }) {
+function Answer({ answer, handleAnswerClick, checked, isCorrect, clicked }) {
   const buttonStyle = {
-    backgroundColor: checked ? (isCorrect ? "green" : "red") : null,
+    backgroundColor: checked
+      ? isCorrect
+        ? "green"
+        : clicked === answer.id && "red"
+      : null,
     color: clicked === answer.id ? "white" : "black",
   };
 
@@ -10,7 +14,7 @@ function Answer({ answer, handleClick, checked, isCorrect, clicked }) {
         style={buttonStyle}
         key={answer.id}
         onClick={() => {
-          handleClick(answer.id);
+          handleAnswerClick(answer.id);
         }}
       >
         {answer.answer}

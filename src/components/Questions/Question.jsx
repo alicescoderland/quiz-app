@@ -9,9 +9,10 @@ function Question() {
   const correctAnswerId = currentQuestion.correctAnswerId;
 
   const [clicked, setClicked] = useState(null);
-  const [checked, setChecked] = useState(null);
+  const [checked, setChecked] = useState(false);
+  const [showCheckButton, setShowCheckButton] = useState(true);
 
-  const handleClick = (id) => {
+  const handleAnswerClick = (id) => {
     console.log("Kliknięto jakiś answer");
     setClicked(id);
   };
@@ -19,6 +20,14 @@ function Question() {
   const handleCheckClick = () => {
     console.log("Kliknięto check");
     setChecked(true);
+    setShowCheckButton(false);
+  };
+  const isAnswerSelected = clicked !== null;
+
+  const handleNextClick = () => {
+    console.log("Kliknieo next");
+    setChecked(false);
+    setShowCheckButton(true);
   };
 
   return (
@@ -30,11 +39,14 @@ function Question() {
           answer={answer}
           isCorrect={checked ? answer.id === correctAnswerId : null}
           clicked={clicked}
-          handleClick={handleClick}
+          handleAnswerClick={handleAnswerClick}
           checked={checked}
         />
       ))}
-      <button onClick={handleCheckClick}>Check</button>
+      {isAnswerSelected && showCheckButton ? ( // Pokaż przycisk "Check" tylko jeśli wybrano odpowiedź
+        <button onClick={handleCheckClick}>Check</button>
+      ) : null}
+      {checked ? <button onClick={handleNextClick}>Next</button> : null}
     </section>
   );
 }
