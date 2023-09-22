@@ -3,7 +3,7 @@ import questionsData from "../../data/questions.json";
 import { useState } from "react";
 
 function Question() {
-  const indexToShow = 0;
+  const [indexToShow, setIndexToShow] = useState(0);
   const currentQuestion = questionsData.questions[indexToShow];
   const answers = currentQuestion.answer;
   const correctAnswerId = currentQuestion.correctAnswerId;
@@ -26,8 +26,10 @@ function Question() {
 
   const handleNextClick = () => {
     console.log("Kliknieo next");
+    setIndexToShow(indexToShow + 1)
     setChecked(false);
     setShowCheckButton(true);
+    setClicked(null); 
   };
 
   return (
@@ -43,7 +45,7 @@ function Question() {
           checked={checked}
         />
       ))}
-      {isAnswerSelected && showCheckButton ? ( // Pokaż przycisk "Check" tylko jeśli wybrano odpowiedź
+      {isAnswerSelected && showCheckButton ? (
         <button onClick={handleCheckClick}>Check</button>
       ) : null}
       {checked ? <button onClick={handleNextClick}>Next</button> : null}
