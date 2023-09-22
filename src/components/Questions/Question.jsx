@@ -13,23 +13,20 @@ function Question() {
   const [showCheckButton, setShowCheckButton] = useState(true);
 
   const handleAnswerClick = (id) => {
-    console.log("Kliknięto jakiś answer");
     setClicked(id);
   };
 
   const handleCheckClick = () => {
-    console.log("Kliknięto check");
     setChecked(true);
     setShowCheckButton(false);
   };
   const isAnswerSelected = clicked !== null;
 
   const handleNextClick = () => {
-    console.log("Kliknieo next");
-    setIndexToShow(indexToShow + 1)
+    setIndexToShow(indexToShow + 1);
     setChecked(false);
     setShowCheckButton(true);
-    setClicked(null); 
+    setClicked(null);
   };
 
   return (
