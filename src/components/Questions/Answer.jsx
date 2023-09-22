@@ -1,16 +1,10 @@
-function Answer({ answers, correctAnserId }) {
+function Answer({ answer }) {
   return (
-    <section>
-      {answers.map((answer) => (
-        <div key={answer.id}>
-          {answer.id === correctAnserId ? (
-            <strong>{answer.answer}</strong>
-          ) : (
-            answer.answer
-          )}
-        </div>
-      ))}
-    </section>
+    <div key={answer.id}>
+  
+    { answer.answer}
+
+ </div>
   );
 }
 export default Answer;

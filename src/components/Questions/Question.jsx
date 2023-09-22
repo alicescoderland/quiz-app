@@ -11,8 +11,9 @@ function Question() {
       <div>
         <p>{currentQuestion.question}</p>
       </div>
-
-      <Answer answers={answers} correctAnswerId={currentQuestion.correctAnswerId} />
+      {answers.map((answer) => (
+        <Answer key={answer.id} answer={answer} />
+      ))}
     </section>
   );
 }
