@@ -1,5 +1,6 @@
 import Answer from "./Answer";
 import questionsData from "../../data/questions.json";
+import questionStyle from "./Question.module.css";
 import { useState } from "react";
 
 function Question() {
@@ -30,8 +31,8 @@ function Question() {
   };
 
   return (
-    <section>
-      <div>{currentQuestion.question}</div>
+    <section className={questionStyle.container}>
+      <div className={questionStyle.question}>{currentQuestion.question}</div>
       {answers.map((answer) => (
         <Answer
           key={answer.id}
@@ -43,9 +44,9 @@ function Question() {
         />
       ))}
       {isAnswerSelected && showCheckButton ? (
-        <button onClick={handleCheckClick}>Check</button>
+        <button className={questionStyle.navigateBtn} onClick={handleCheckClick}>Check</button>
       ) : null}
-      {checked ? <button onClick={handleNextClick}>Next</button> : null}
+      {checked ? <button className={questionStyle.navigateBtn} onClick={handleNextClick}>Next</button> : null}
     </section>
   );
 }
