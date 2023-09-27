@@ -45,6 +45,49 @@
           }
         ],
         "correctAnswerId": 2
+      },
+      {
+        "id": 3,
+        "question": "What is the main ingredient of risotto",
+        "answer": [
+          {
+            "id": 1,
+            "answer": "Cottage cheese"
+          },
+          {
+            "id": 2,
+            "answer": "Rice"
+          },
+          {
+            "id": 3,
+            "answer": "Pasta"
+          },
+          {
+            "id": 4,
+            "answer": "Tomatoes"
+          }
+        ],
+        "correctAnswerId": 2
+      },
+      {
+        "id": 4,
+        "question": "How many atriums does the human heart have?",
+        "answer": [
+          {
+            "id": 1,
+            "answer": "One"
+          },
+          {
+            "id": 2,
+            "answer": "Two"
+          },
+          {
+            "id": 3,
+            "answer": "None"
+          }
+          
+        ],
+        "correctAnswerId":  2
       }
     ]
   }

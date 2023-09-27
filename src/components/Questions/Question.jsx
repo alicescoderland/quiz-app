@@ -1,25 +1,41 @@
+import { useState } from "react";
 import Answer from "./Answer";
 import questionsData from "../../data/questions.json";
 import questionStyle from "./Question.module.css";
-import { useState } from "react";
+
+const getRandomQuestion = (questions) => {
+  const randomQuestionArray = [...questions];
+  for (let i = randomQuestionArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [randomQuestionArray[i], randomQuestionArray[j]] = [
+      randomQuestionArray[j],
+      randomQuestionArray[i],
+    ];
+  }
+  console.log("Przetasowane pytania:", randomQuestionArray);
+  return randomQuestionArray;
+};
 
 function Question() {
+  const [randomQuestion] = useState(getRandomQuestion(questionsData.questions));
   const [indexToShow, setIndexToShow] = useState(0);
-  const currentQuestion = questionsData.questions[indexToShow];
-  const answers = currentQuestion.answer;
-  const correctAnswerId = currentQuestion.correctAnswerId;
-
   const [clicked, setClicked] = useState(null);
   const [checked, setChecked] = useState(false);
   const [showCheckButton, setShowCheckButton] = useState(true);
 
+  const currentQuestion = randomQuestion[indexToShow];
+  const answers = currentQuestion.answer;
+  const correctAnswerId = currentQuestion.correctAnswerId;
+
   const handleAnswerClick = (id) => {
     setClicked(id);
+    console.log("Kliknięto odpowiedź:", id);
   };
 
   const handleCheckClick = () => {
     setChecked(true);
     setShowCheckButton(false);
+    console.log("Kliknięto przycisk Check");
   };
   const isAnswerSelected = clicked !== null;
 
@@ -28,6 +44,7 @@ function Question() {
     setChecked(false);
     setShowCheckButton(true);
     setClicked(null);
+    console.log("Kliknięto przycisk Next");
   };
 
   return (
@@ -44,11 +61,19 @@ function Question() {
         />
       ))}
       {isAnswerSelected && showCheckButton ? (
-        <button className={questionStyle.navigateBtn} onClick={handleCheckClick}>Check</button>
+        <button
+          className={questionStyle.navigateBtn}
+          onClick={handleCheckClick}
+        >
+          Check
+        </button>
       ) : null}
-      {checked ? <button className={questionStyle.navigateBtn} onClick={handleNextClick}>Next</button> : null}
+      {checked ? (
+        <button className={questionStyle.navigateBtn} onClick={handleNextClick}>
+          Next
+        </button>
+      ) : null}
     </section>
   );
 }
-
 export default Question;
