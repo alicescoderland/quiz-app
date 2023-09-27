@@ -12,7 +12,6 @@ const getRandomQuestion = (questions) => {
       randomQuestionArray[i],
     ];
   }
-  console.log("Przetasowane pytania:", randomQuestionArray);
   return randomQuestionArray;
 };
 
@@ -29,13 +28,11 @@ function Question() {
 
   const handleAnswerClick = (id) => {
     setClicked(id);
-    console.log("Kliknięto odpowiedź:", id);
   };
 
   const handleCheckClick = () => {
     setChecked(true);
     setShowCheckButton(false);
-    console.log("Kliknięto przycisk Check");
   };
   const isAnswerSelected = clicked !== null;
 
@@ -44,8 +41,9 @@ function Question() {
     setChecked(false);
     setShowCheckButton(true);
     setClicked(null);
-    console.log("Kliknięto przycisk Next");
   };
+
+  const isLastQuestion = indexToShow === randomQuestion.length - 1;
 
   return (
     <section className={questionStyle.container}>
@@ -69,9 +67,16 @@ function Question() {
         </button>
       ) : null}
       {checked ? (
-        <button className={questionStyle.navigateBtn} onClick={handleNextClick}>
-          Next
-        </button>
+        isLastQuestion ? (
+          <button className={questionStyle.navigateBtn}>Finish</button>
+        ) : (
+          <button
+            className={questionStyle.navigateBtn}
+            onClick={handleNextClick}
+          >
+            Next
+          </button>
+        )
       ) : null}
     </section>
   );
