@@ -21,10 +21,13 @@ function Question() {
   const [clicked, setClicked] = useState(null);
   const [checked, setChecked] = useState(false);
   const [showCheckButton, setShowCheckButton] = useState(true);
+  const [score, setScore] = useState(0);
 
   const currentQuestion = randomQuestion[indexToShow];
-  const answers = currentQuestion.answer;
-  const correctAnswerId = currentQuestion.correctAnswerId;
+  const answers = currentQuestion?.answer;
+  const correctAnswerId = currentQuestion?.correctAnswerId;
+  const isLastQuestion = indexToShow === randomQuestion.length - 1;
+  const questionsLength = randomQuestion.length;
 
   const handleAnswerClick = (id) => {
     setClicked(id);
@@ -33,7 +36,11 @@ function Question() {
   const handleCheckClick = () => {
     setChecked(true);
     setShowCheckButton(false);
+    if (clicked === correctAnswerId) {
+      setScore(score + 1);
+    }
   };
+
   const isAnswerSelected = clicked !== null;
 
   const handleNextClick = () => {
@@ -43,21 +50,34 @@ function Question() {
     setClicked(null);
   };
 
-  const isLastQuestion = indexToShow === randomQuestion.length - 1;
+
 
   return (
     <section className={questionStyle.container}>
-      <div className={questionStyle.question}>{currentQuestion.question}</div>
-      {answers.map((answer) => (
-        <Answer
-          key={answer.id}
-          answer={answer}
-          isCorrect={checked ? answer.id === correctAnswerId : null}
-          clicked={clicked}
-          handleAnswerClick={handleAnswerClick}
-          checked={checked}
-        />
-      ))}
+      {currentQuestion ? (
+        <>
+          <div className={questionStyle.question}>
+            {currentQuestion.question}
+          </div>
+
+          {answers.map((answer) => (
+            <Answer
+              key={answer.id}
+              answer={answer}
+              isCorrect={checked ? answer.id === correctAnswerId : null}
+              clicked={clicked}
+              handleAnswerClick={handleAnswerClick}
+              checked={checked}
+            />
+          ))}
+        </>
+      ) : (
+        <div className={questionStyle.score}>
+          <p>Your score: </p>
+          <p>{score}/{questionsLength}</p>
+        </div>
+      )}
+
       {isAnswerSelected && showCheckButton ? (
         <button
           className={questionStyle.navigateBtn}
@@ -66,17 +86,11 @@ function Question() {
           Check
         </button>
       ) : null}
+
       {checked ? (
-        isLastQuestion ? (
-          <button className={questionStyle.navigateBtn}>Finish</button>
-        ) : (
-          <button
-            className={questionStyle.navigateBtn}
-            onClick={handleNextClick}
-          >
-            Next
-          </button>
-        )
+        <button className={questionStyle.navigateBtn} onClick={handleNextClick}>
+          {isLastQuestion ? "SHOW SCORE" : "Next"}
+        </button>
       ) : null}
     </section>
   );

@@ -18,5 +18,14 @@
   font-size: 1.4em;
   color: rgb(42, 130, 237);
   font-weight: bold;
-  margin: 8em;
+  position: fixed;
+  bottom: 0;
+}
+.score { 
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
 }
