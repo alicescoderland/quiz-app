@@ -2,6 +2,8 @@ import { useState } from "react";
 import Answer from "./Answer";
 import questionsData from "../../data/questions.json";
 import questionStyle from "./Question.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrophy } from "@fortawesome/free-solid-svg-icons";
 
 const getRandomQuestion = (questions) => {
   const randomQuestionArray = [...questions];
@@ -15,13 +17,14 @@ const getRandomQuestion = (questions) => {
   return randomQuestionArray;
 };
 
-function Question() {
+function Question({ updateQuizState }) {
   const [randomQuestion] = useState(getRandomQuestion(questionsData.questions));
   const [indexToShow, setIndexToShow] = useState(0);
   const [clicked, setClicked] = useState(null);
   const [checked, setChecked] = useState(false);
   const [showCheckButton, setShowCheckButton] = useState(true);
   const [score, setScore] = useState(0);
+  const [_, setQuizState] = useState("quiz");
 
   const currentQuestion = randomQuestion[indexToShow];
   const answers = currentQuestion?.answer;
@@ -44,6 +47,10 @@ function Question() {
   const isAnswerSelected = clicked !== null;
 
   const handleNextClick = () => {
+    if (indexToShow + 1 === randomQuestion.length) {
+      setQuizState("score");
+      updateQuizState("score");
+    }
     setIndexToShow(indexToShow + 1);
     setChecked(false);
     setShowCheckButton(true);
@@ -51,11 +58,13 @@ function Question() {
   };
 
 
-
   return (
     <section className={questionStyle.container}>
       {currentQuestion ? (
         <>
+          <div className={questionStyle.questionNubmers}>
+            question {indexToShow + 1} of {questionsLength}
+          </div>
           <div className={questionStyle.question}>
             {currentQuestion.question}
           </div>
@@ -74,7 +83,10 @@ function Question() {
       ) : (
         <div className={questionStyle.score}>
           <p>Your score: </p>
-          <p>{score}/{questionsLength}</p>
+          <p>
+            {score}/{questionsLength}
+          </p>
+          <FontAwesomeIcon icon={faTrophy} className={questionStyle.icon} />
         </div>
       )}
 
