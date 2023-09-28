@@ -25,6 +25,7 @@ function Question({ updateQuizState }) {
   const [showCheckButton, setShowCheckButton] = useState(true);
   const [score, setScore] = useState(0);
   const [_, setQuizState] = useState("quiz");
+  const [answerChecked, setAnswerChecked] = useState(false);
 
   const currentQuestion = randomQuestion[indexToShow];
   const answers = currentQuestion?.answer;
@@ -33,14 +34,21 @@ function Question({ updateQuizState }) {
   const questionsLength = randomQuestion.length;
 
   const handleAnswerClick = (id) => {
-    setClicked(id);
+    if (!answerChecked) {
+      setClicked(id);
+    }
   };
 
   const handleCheckClick = () => {
-    setChecked(true);
-    setShowCheckButton(false);
-    if (clicked === correctAnswerId) {
-      setScore(score + 1);
+    if (clicked !== null) {
+      setAnswerChecked(true);
+      setChecked(true);
+      setShowCheckButton(false);
+      if (clicked === correctAnswerId) {
+        setScore(score + 1);
+      } else {
+        setAnswerChecked(false);
+      }
     }
   };
 
@@ -56,7 +64,6 @@ function Question({ updateQuizState }) {
     setShowCheckButton(true);
     setClicked(null);
   };
-
 
   return (
     <section className={questionStyle.container}>
