@@ -25,44 +25,45 @@ function Question({ updateQuizState }) {
   const [showCheckButton, setShowCheckButton] = useState(true);
   const [score, setScore] = useState(0);
   const [_, setQuizState] = useState("quiz");
-  const [answerChecked, setAnswerChecked] = useState(false);
 
   const currentQuestion = randomQuestion[indexToShow];
   const answers = currentQuestion?.answer;
   const correctAnswerId = currentQuestion?.correctAnswerId;
   const isLastQuestion = indexToShow === randomQuestion.length - 1;
   const questionsLength = randomQuestion.length;
+  const isAnswerSelected = clicked !== null;
 
   const handleAnswerClick = (id) => {
-    if (!answerChecked) {
+    if (!checked) {
       setClicked(id);
     }
   };
 
   const handleCheckClick = () => {
-    if (clicked !== null) {
-      setAnswerChecked(true);
+    if (isAnswerSelected) {
       setChecked(true);
       setShowCheckButton(false);
       if (clicked === correctAnswerId) {
         setScore(score + 1);
-      } else {
-        setAnswerChecked(false);
       }
+    } else {
+      setChecked(null);
     }
   };
 
-  const isAnswerSelected = clicked !== null;
-
   const handleNextClick = () => {
-    if (indexToShow + 1 === randomQuestion.length) {
-      setQuizState("score");
-      updateQuizState("score");
+    if (isAnswerSelected) {
+      if (indexToShow + 1 === randomQuestion.length) {
+        setQuizState("score");
+        updateQuizState("score");
+      }
+      setIndexToShow(indexToShow + 1);
+      setChecked(false);
+      setShowCheckButton(true);
+      setClicked(null);
+    } else {
+      setChecked(null);
     }
-    setIndexToShow(indexToShow + 1);
-    setChecked(false);
-    setShowCheckButton(true);
-    setClicked(null);
   };
 
   return (

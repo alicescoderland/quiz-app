@@ -7,14 +7,14 @@
 .question {
   font-size: 1.6em;
   font-weight: bold;
-  margin-left: 1em;
-  margin-right: 1em;
-  margin-bottom: 1em;
+  margin: 1em;
+  margin-top: 0.5em;
 }
+
 .questionNubmers {
   font-size: 1em;
-  margin-bottom: 0.5em;
 }
+
 .navigateBtn {
   width: 350px;
   height: 55px;
@@ -26,7 +26,8 @@
   position: fixed;
   bottom: 0;
 }
-.score { 
+
+.score {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -37,5 +38,5 @@
 
 .icon {
   font-size: 2em;
-  color:rgb(255, 237, 62);
+  color: rgb(255, 237, 62);
 }
