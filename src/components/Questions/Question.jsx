@@ -2,8 +2,6 @@ import { useState } from "react";
 import Answer from "./Answer";
 import questionsData from "../../data/questions.json";
 import questionStyle from "./Question.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrophy } from "@fortawesome/free-solid-svg-icons";
 
 const getRandomQuestion = (questions) => {
   const randomQuestionArray = [...questions];
@@ -25,6 +23,7 @@ function Question({ updateQuizState }) {
   const [showCheckButton, setShowCheckButton] = useState(true);
   const [score, setScore] = useState(0);
   const [_, setQuizState] = useState("quiz");
+  const [restart, setRestart] = useState(false);
 
   const currentQuestion = randomQuestion[indexToShow];
   const answers = currentQuestion?.answer;
@@ -63,6 +62,9 @@ function Question({ updateQuizState }) {
       setClicked(null);
     } else {
       setChecked(null);
+      setRestart(true);
+      setIndexToShow(0);
+      setScore(0);
     }
   };
 
@@ -89,13 +91,20 @@ function Question({ updateQuizState }) {
           ))}
         </>
       ) : (
-        <div className={questionStyle.score}>
-          <p>Your score: </p>
-          <p>
-            {score}/{questionsLength}
-          </p>
-          <FontAwesomeIcon icon={faTrophy} className={questionStyle.icon} />
-        </div>
+        <>
+          <div className={questionStyle.score}>
+            <p>Your score: </p>
+            <p>
+              {score}/{questionsLength}
+            </p>
+          </div>
+          <button
+            className={questionStyle.navigateBtn}
+            onClick={handleNextClick}
+          >
+            {isLastQuestion ? "SHOW SCORE" : "Try Again"}
+          </button>
+        </>
       )}
 
       {isAnswerSelected && showCheckButton ? (

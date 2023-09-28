@@ -8,16 +8,17 @@
   font-size: 1.6em;
   font-weight: bold;
   margin: 1em;
-  margin-top: 0.5em;
+  margin-top: 0;
 }
 
 .questionNubmers {
   font-size: 1em;
+  margin-bottom: 0;
 }
 
 .navigateBtn {
-  width: 350px;
-  height: 55px;
+  width: 350px !important;
+  height: 55px ;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   font-size: 1.4em;
@@ -31,12 +32,12 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.9em;
   font-weight: bold;
   color: rgb(255, 255, 255);
 }
 
-.icon {
-  font-size: 2em;
-  color: rgb(255, 237, 62);
+.score p {
+  margin: 0;
 }
+
