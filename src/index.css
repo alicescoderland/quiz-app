@@ -1,7 +1,11 @@
+:root {
+  --blueColor: rgb(42, 130, 237);
+  --whiteColor:   rgb(255, 255, 255);
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Spectral', serif;
-  color: white;
-  background-color: rgb(42, 130, 237);
+  color: var(--whiteColor);
 }

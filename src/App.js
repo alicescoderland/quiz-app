@@ -1,20 +1,15 @@
-import React, { useState } from "react";
-import Image from "./components/Image/Image";
-import Question from "./components/Questions/Question";
-import jsImg from "./assets/image/javascript-logo.png";
-import scoreImg from "./assets/image/boy-exploding-party.png";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./components/Pages/Home";
+import Quiz from "./components/Pages/Quiz";
 
 function App() {
-  const [quizState, setQuizState] = useState("quiz");
-  
-  const updateQuizState = (newState) => {
-    setQuizState(newState);
-  };
   return (
-    <React.Fragment>
-      <Image img={quizState === "quiz" ? jsImg : scoreImg} />
-      <Question updateQuizState={updateQuizState}/>
-    </React.Fragment>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/quiz" element={<Quiz />} />
+      </Routes>
+    </Router>
   );
 }
 

@@ -1,0 +1,20 @@
+.container {
+  background-color: var(--whiteColor);
+  padding: 1em;
+  margin-top: 5em;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+.title span:first-child {
+  font-size: 2.5em;
+  color: rgb(255, 43, 102);
+  font-weight: bold;
+}
+
+.title span:nth-child(2) {
+  color: grey;
+}

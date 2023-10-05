@@ -6,11 +6,11 @@
 button {
   width: 350px;
   height: 55px;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--whiteColor);
   border: none;
   border-radius: 10px;
   font-size: 1.4em;
-  color: rgb(42, 130, 237);
+  color: var(--blueColor);
   font-weight: bold;
   margin: 0.35em;
 }
@@ -21,7 +21,7 @@ button {
     rgba(43, 180, 19, 0.8673844537815126) 0%,
     rgba(63, 205, 20, 0.8225665266106442) 100%
   );
-  color: rgb(255, 255, 255);
+  color: var(--whiteColor);
 }
 
 .unCorrect {
@@ -30,7 +30,7 @@ button {
     rgba(250, 0, 0, 0.8225665266106442) 0%,
     rgba(255, 53, 53, 0.8732069672131147) 100%
   );
-  color: rgb(255, 255, 255);
+  color: var(--whiteColor);
 }
 
 .click {

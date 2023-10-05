@@ -15,15 +15,14 @@ const getRandomQuestion = (questions) => {
   return randomQuestionArray;
 };
 
-function Question({ updateQuizState }) {
+function Question({ setQuizState }) {
   const [randomQuestion] = useState(getRandomQuestion(questionsData.questions));
   const [indexToShow, setIndexToShow] = useState(0);
   const [clicked, setClicked] = useState(null);
   const [checked, setChecked] = useState(false);
   const [showCheckButton, setShowCheckButton] = useState(true);
   const [score, setScore] = useState(0);
-  const [_, setQuizState] = useState("quiz");
-  const [restart, setRestart] = useState(false);
+  const [_, setRestart] = useState(false);
 
   const currentQuestion = randomQuestion[indexToShow];
   const answers = currentQuestion?.answer;
@@ -53,14 +52,13 @@ function Question({ updateQuizState }) {
   const handleNextClick = () => {
     if (isAnswerSelected) {
       if (indexToShow + 1 === randomQuestion.length) {
-        setQuizState("score");
-        updateQuizState("score");
       }
       setIndexToShow(indexToShow + 1);
       setChecked(false);
       setShowCheckButton(true);
       setClicked(null);
     } else {
+      setQuizState("score");
       setChecked(null);
       setRestart(true);
       setIndexToShow(0);
