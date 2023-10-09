@@ -52,13 +52,14 @@ function Question({ setQuizState }) {
   const handleNextClick = () => {
     if (isAnswerSelected) {
       if (indexToShow + 1 === randomQuestion.length) {
+        setQuizState("score");
+       
       }
       setIndexToShow(indexToShow + 1);
       setChecked(false);
       setShowCheckButton(true);
       setClicked(null);
     } else {
-      setQuizState("score");
       setChecked(null);
       setRestart(true);
       setIndexToShow(0);
@@ -67,59 +68,64 @@ function Question({ setQuizState }) {
   };
 
   return (
-    <section className={questionStyle.container}>
-      {currentQuestion ? (
-        <>
-          <div className={questionStyle.questionNubmers}>
-            question {indexToShow + 1} of {questionsLength}
-          </div>
-          <div className={questionStyle.question}>
-            {currentQuestion.question}
-          </div>
+    <>
+      <section className={questionStyle.container}>
+        {currentQuestion ? (
+          <>
+            <div className={questionStyle.questionNubmers}>
+              question {indexToShow + 1} of {questionsLength}
+            </div>
+            <div className={questionStyle.question}>
+              {currentQuestion.question}
+            </div>
 
-          {answers.map((answer) => (
-            <Answer
-              key={answer.id}
-              answer={answer}
-              isCorrect={checked ? answer.id === correctAnswerId : null}
-              clicked={clicked}
-              handleAnswerClick={handleAnswerClick}
-              checked={checked}
-            />
-          ))}
-        </>
-      ) : (
-        <>
-          <div className={questionStyle.score}>
-            <p>Your score: </p>
-            <p>
-              {score}/{questionsLength}
-            </p>
-          </div>
+            {answers.map((answer) => (
+              <Answer
+                key={answer.id}
+                answer={answer}
+                isCorrect={checked ? answer.id === correctAnswerId : null}
+                clicked={clicked}
+                handleAnswerClick={handleAnswerClick}
+                checked={checked}
+              />
+            ))}
+          </>
+        ) : (
+          <>
+            <div className={questionStyle.score}>
+              <p>Your score: </p>
+              <p>
+                {score}/{questionsLength}
+              </p>
+            </div>
+            <button
+              className={questionStyle.navigateBtn}
+              onClick={handleNextClick}
+            >
+              {isLastQuestion ? "SHOW SCORE" : "Try Again"}
+            </button>
+          </>
+        )}
+
+        {isAnswerSelected && showCheckButton ? (
+          <button
+            className={questionStyle.navigateBtn}
+            onClick={handleCheckClick}
+          >
+            Check
+          </button>
+        ) : null}
+
+        {checked ? (
           <button
             className={questionStyle.navigateBtn}
             onClick={handleNextClick}
           >
-            {isLastQuestion ? "SHOW SCORE" : "Try Again"}
+            {isLastQuestion ? "SHOW SCORE" : "Next"}
           </button>
-        </>
-      )}
-
-      {isAnswerSelected && showCheckButton ? (
-        <button
-          className={questionStyle.navigateBtn}
-          onClick={handleCheckClick}
-        >
-          Check
-        </button>
-      ) : null}
-
-      {checked ? (
-        <button className={questionStyle.navigateBtn} onClick={handleNextClick}>
-          {isLastQuestion ? "SHOW SCORE" : "Next"}
-        </button>
-      ) : null}
-    </section>
+        ) : null}
+      </section>
+    </>
   );
 }
 export default Question;

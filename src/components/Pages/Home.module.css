@@ -1,12 +1,13 @@
 .container {
-  background-color: var(--whiteColor);
   padding: 1em;
-  margin-top: 5em;
+  margin-top: 2.5em;
+  background-color: var(--whiteColor);
 }
 
 .title {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .title span:first-child {

@@ -11,7 +11,7 @@ const quizSelection= [
       "name": "HTML"
     },
     {
-      "id": 1,
+      "id": 2,
       "img": cssImg,
       "level": "level 2",
       "name": "CSS"

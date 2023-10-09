@@ -1,0 +1,13 @@
+.container {
+  height: 100vh;
+  background-color: var(--blueColor);
+}
+
+.icon {
+  margin: 1.5em;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--whiteColor);
+}
