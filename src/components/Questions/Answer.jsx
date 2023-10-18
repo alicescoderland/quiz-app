@@ -1,7 +1,7 @@
 import classNames from "classnames/bind";
-import answerStyle from "./Answer.module.css";
+import answerStyles from "./Answer.module.css";
 
-let cN = classNames.bind(answerStyle);
+let cN = classNames.bind(answerStyles);
 
 function Answer({ answer, handleAnswerClick, checked, isCorrect, clicked }) {
   let className = cN({
@@ -11,7 +11,7 @@ function Answer({ answer, handleAnswerClick, checked, isCorrect, clicked }) {
   });
 
   return (
-    <section className={answerStyle.container}>
+    <section className={answerStyles.container}>
       <button
         className={className}
         key={answer.id}

@@ -1,9 +1,8 @@
 import { useState } from "react";
 import Answer from "./Answer";
 import questionsData from "../../data/questionsData.json";
-import questionStyle from "./Question.module.css";
-
-
+import questionStyles from "./Question.module.css";
+import Progres from "../Progres/Progres";
 
 const getRandomQuestion = (questions) => {
   const randomQuestionArray = [...questions];
@@ -70,16 +69,13 @@ function Question({ setQuizState, id }) {
 
   return (
     <>
-      <section className={questionStyle.container}>
+      <section className={questionStyles.container}>
         {currentQuestion ? (
           <>
-            <div className={questionStyle.questionNubmers}>
-              question {indexToShow + 1} of {questionsLength}
-            </div>
-            <div className={questionStyle.question}>
+           <Progres indexToShow={indexToShow} questionsLength={questionsLength} />
+            <div className={questionStyles.question}>
               {currentQuestion.question}
             </div>
-
             {answers.map((answer) => (
               <Answer
                 key={answer.id}
@@ -93,14 +89,14 @@ function Question({ setQuizState, id }) {
           </>
         ) : (
           <>
-            <div className={questionStyle.score}>
+            <div className={questionStyles.score}>
               <p>Your score: </p>
               <p>
                 {score}/{questionsLength}
               </p>
             </div>
             <button
-              className={questionStyle.navigateBtn}
+              className={questionStyles.navigateBtn}
               onClick={handleNextClick}
             >
               {isLastQuestion ? "SHOW SCORE" : "Try Again"}
@@ -110,7 +106,7 @@ function Question({ setQuizState, id }) {
 
         {isAnswerSelected && showCheckButton ? (
           <button
-            className={questionStyle.navigateBtn}
+            className={questionStyles.navigateBtn}
             onClick={handleCheckClick}
           >
             Check
@@ -119,7 +115,7 @@ function Question({ setQuizState, id }) {
 
         {checked ? (
           <button
-            className={questionStyle.navigateBtn}
+            className={questionStyles.navigateBtn}
             onClick={handleNextClick}
           >
             {isLastQuestion ? "SHOW SCORE" : "Next"}
