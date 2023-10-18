@@ -1,0 +1,364 @@
+{
+  "html": [
+    {
+      "id": 1,
+      "question": "What is the capital of Turkey?",
+      "answer": [
+        {
+          "id": 1,
+          "answer": "Antalya"
+        },
+        {
+          "id": 2,
+          "answer": "Ankara"
+        },
+        {
+          "id": 3,
+          "answer": "Konya"
+        },
+        {
+          "id": 4,
+          "answer": "Istanbul"
+        }
+      ],
+      "correctAnswerId": 2
+    },
+    {
+      "id": 2,
+      "question": "Who wrote the novel 'Crime and Punishment?",
+      "answer": [
+        {
+          "id": 1,
+          "answer": "William Shakespeare"
+        },
+        {
+          "id": 2,
+          "answer": "Charles Dickens"
+        },
+        {
+          "id": 3,
+          "answer": "Leo Tolstoj"
+        },
+        {
+          "id": 4,
+          "answer": "Fiodor Dostojewski"
+        }
+      ],
+      "correctAnswerId": 4
+    },
+    {
+      "id": 3,
+      "question": "What is the main ingredient of risotto?",
+      "answer": [
+        {
+          "id": 1,
+          "answer": "Cottage cheese"
+        },
+        {
+          "id": 2,
+          "answer": "Tomates"
+        },
+        {
+          "id": 3,
+          "answer": "Pasta"
+        },
+        {
+          "id": 4,
+          "answer": "Rice"
+        }
+      ],
+      "correctAnswerId": 4
+    },
+    {
+      "id": 4,
+      "question": "How many atriums does the human heart have?",
+      "answer": [
+        {
+          "id": 1,
+          "answer": "One"
+        },
+        {
+          "id": 2,
+          "answer": "Two"
+        },
+        {
+          "id": 3,
+          "answer": "None"
+        }
+      ],
+      "correctAnswerId": 2
+    }
+  ],
+
+  "css": [
+    {
+      "id": 1,
+      "question": "What is the capital of Poland?",
+      "answer": [
+        {
+          "id": 1,
+          "answer": "Katowice"
+        },
+        {
+          "id": 2,
+          "answer": "Warszawa"
+        },
+        {
+          "id": 3,
+          "answer": "Kraków"
+        },
+        {
+          "id": 4,
+          "answer": "Wrocław"
+        }
+      ],
+      "correctAnswerId": 2
+    },
+    {
+      "id": 2,
+      "question": "Who wrote the novel 'Hobbit?",
+      "answer": [
+        {
+          "id": 1,
+          "answer": "William Shakespeare"
+        },
+        {
+          "id": 2,
+          "answer": "Charles Dickens"
+        },
+        {
+          "id": 3,
+          "answer": "Leo Tolstoj"
+        },
+        {
+          "id": 4,
+          "answer": "J.R.R. Tolkien"
+        }
+      ],
+      "correctAnswerId": 4
+    },
+    {
+      "id": 3,
+      "question": "What is the main ingredient of spaghetti?",
+      "answer": [
+        {
+          "id": 1,
+          "answer": "Cottage cheese"
+        },
+        {
+          "id": 2,
+          "answer": "Tomates"
+        },
+        {
+          "id": 3,
+          "answer": "Pasta"
+        },
+        {
+          "id": 4,
+          "answer": "Rice"
+        }
+      ],
+      "correctAnswerId": 3
+    },
+    {
+      "id": 4,
+      "question": "How many kidneys does the human have?",
+      "answer": [
+        {
+          "id": 1,
+          "answer": "One"
+        },
+        {
+          "id": 2,
+          "answer": "Two"
+        },
+        {
+          "id": 3,
+          "answer": "None"
+        }
+      ],
+      "correctAnswerId": 2
+    }
+  ],
+
+  "js": [
+    {
+      "id": 1,
+      "question": "What is the capital of Italy?",
+      "answer": [
+        {
+          "id": 1,
+          "answer": "Venice"
+        },
+        {
+          "id": 2,
+          "answer": "Rome"
+        },
+        {
+          "id": 3,
+          "answer": "Palermo"
+        },
+        {
+          "id": 4,
+          "answer": "Bolonia"
+        }
+      ],
+      "correctAnswerId": 2
+    },
+    {
+      "id": 2,
+      "question": "Who wrote the novel 'Lalka'?",
+      "answer": [
+        {
+          "id": 1,
+          "answer": "Bolesław Prus"
+        },
+        {
+          "id": 2,
+          "answer": "Charles Dickens"
+        },
+        {
+          "id": 3,
+          "answer": "Leo Tolstoj"
+        },
+        {
+          "id": 4,
+          "answer": "Fiodor Dostojewski"
+        }
+      ],
+      "correctAnswerId": 1
+    },
+    {
+      "id": 3,
+      "question": "What is the main ingredient of pizza?",
+      "answer": [
+        {
+          "id": 1,
+          "answer": "Cottage cheese"
+        },
+        {
+          "id": 2,
+          "answer": "Tomates"
+        },
+        {
+          "id": 3,
+          "answer": "Pasta"
+        },
+        {
+          "id": 4,
+          "answer": "Flour"
+        }
+      ],
+      "correctAnswerId": 4
+    },
+    {
+      "id": 4,
+      "question": "How many fingers does the human have?",
+      "answer": [
+        {
+          "id": 1,
+          "answer": "10"
+        },
+        {
+          "id": 2,
+          "answer": "20"
+        },
+        {
+          "id": 3,
+          "answer": "15"
+        }
+      ],
+      "correctAnswerId": 2
+    }
+  ],
+  "react": [
+    {
+      "id": 1,
+      "question": "What is the capital of Ukraine?",
+      "answer": [
+        {
+          "id": 1,
+          "answer": "Lviv"
+        },
+        {
+          "id": 2,
+          "answer": "Kyiv"
+        },
+        {
+          "id": 3,
+          "answer": "Odessa"
+        },
+        {
+          "id": 4,
+          "answer": "Kherson"
+        }
+      ],
+      "correctAnswerId": 2
+    },
+    {
+      "id": 2,
+      "question": "Who wrote the novel 'Zemsta'?",
+      "answer": [
+        {
+          "id": 1,
+          "answer": "William Shakespeare"
+        },
+        {
+          "id": 2,
+          "answer": "Aleksander Fredro"
+        },
+        {
+          "id": 3,
+          "answer": "Leo Tolstoj"
+        },
+        {
+          "id": 4,
+          "answer": "Fiodor Dostojewski"
+        }
+      ],
+      "correctAnswerId": 2
+    },
+    {
+      "id": 3,
+      "question": "What is the main ingredient of kebeb?",
+      "answer": [
+        {
+          "id": 1,
+          "answer": "Cottage cheese"
+        },
+        {
+          "id": 2,
+          "answer": "Tomates"
+        },
+        {
+          "id": 3,
+          "answer": "Pasta"
+        },
+        {
+          "id": 4,
+          "answer": "Meat"
+        }
+      ],
+      "correctAnswerId": 4
+    },
+    {
+      "id": 4,
+      "question": "How many spleens does the human have?",
+      "answer": [
+        {
+          "id": 1,
+          "answer": "One"
+        },
+        {
+          "id": 2,
+          "answer": "Two"
+        },
+        {
+          "id": 3,
+          "answer": "None"
+        }
+      ],
+      "correctAnswerId": 2
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import Image from "../Image/Image";
@@ -9,6 +9,7 @@ import scoreImg from "../../assets/image/boy-exploding.png";
 import quizStyles from "./Quiz.module.css";
 
 function Quiz() {
+  const params = useParams();
   const [quizState, setQuizState] = useState("quiz");
 
   const handleQuizState = (state) => {
@@ -20,7 +21,7 @@ function Quiz() {
         <FontAwesomeIcon icon={faX} className={quizStyles.icon} />
       </Link>
       <Image img={quizState === "quiz" ? jsImg : scoreImg} />
-      <Question setQuizState={handleQuizState} />
+      <Question setQuizState={handleQuizState} id={params.id}/>
     </section>
   );
 }

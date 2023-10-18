@@ -1,7 +1,9 @@
 import { useState } from "react";
 import Answer from "./Answer";
-import questionsData from "../../data/questions.json";
+import questionsData from "../../data/questionsData.json";
 import questionStyle from "./Question.module.css";
+
+
 
 const getRandomQuestion = (questions) => {
   const randomQuestionArray = [...questions];
@@ -15,8 +17,8 @@ const getRandomQuestion = (questions) => {
   return randomQuestionArray;
 };
 
-function Question({ setQuizState }) {
-  const [randomQuestion] = useState(getRandomQuestion(questionsData.questions));
+function Question({ setQuizState, id }) {
+  const [randomQuestion] = useState(getRandomQuestion(questionsData[id]));
   const [indexToShow, setIndexToShow] = useState(0);
   const [clicked, setClicked] = useState(null);
   const [checked, setChecked] = useState(false);
@@ -53,7 +55,6 @@ function Question({ setQuizState }) {
     if (isAnswerSelected) {
       if (indexToShow + 1 === randomQuestion.length) {
         setQuizState("score");
-       
       }
       setIndexToShow(indexToShow + 1);
       setChecked(false);

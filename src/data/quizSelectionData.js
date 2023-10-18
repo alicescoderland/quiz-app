@@ -5,25 +5,25 @@ import reactImg from "../assets/image/react-logo.png";
 
 const quizSelection= [
     {
-      "id": 1,
+      "id": 'html',
       "img": htmlImg,
       "level": "level 1",
       "name": "HTML"
     },
     {
-      "id": 2,
+      "id": 'css',
       "img": cssImg,
       "level": "level 2",
       "name": "CSS"
     },
     {
-      "id": 3,
+      "id": 'js',
       "img": jsImg,
       "level": "level 3",
       "name": "Java Script"
     },
     {
-      "id": 4,
+      "id": 'react',
       "img": reactImg,
       "level": "level 4",
       "name": "React"
