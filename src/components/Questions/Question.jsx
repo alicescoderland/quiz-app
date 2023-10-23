@@ -67,12 +67,17 @@ function Question({ setQuizState, id }) {
     }
   };
 
+
   return (
     <>
       <section className={questionStyles.container}>
         {currentQuestion ? (
           <>
-           <Progres indexToShow={indexToShow} questionsLength={questionsLength} />
+            <Progres
+              indexToShow={indexToShow}
+              questionsLength={questionsLength}
+              handleTimeUp={()=>{alert('Koniec')}}
+            />
             <div className={questionStyles.question}>
               {currentQuestion.question}
             </div>
