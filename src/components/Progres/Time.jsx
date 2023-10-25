@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-function Time({ onTimeUp, indexToShow }) {
-  const [timeLeft, setTimeLeft] = useState(10);
+function Time({ time, indexToShow, handleTimeUp }) {
+  const [timeLeft, setTimeLeft] = useState(time);
 
   useEffect(() => {
     let timer;
@@ -12,17 +12,24 @@ function Time({ onTimeUp, indexToShow }) {
       }, 1000);
     } else {
       clearInterval(timer);
-      onTimeUp();
     }
 
     return () => {
       clearInterval(timer);
     };
-  }, [timeLeft, onTimeUp]);
+  }, [timeLeft, time, handleTimeUp]);
 
-  useEffect(()=> {
-    setTimeLeft(10)
-  }, [indexToShow])
+  useEffect(() => {
+    if (timeLeft === 0) {
+      handleTimeUp();
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [timeLeft]);
+
+  useEffect(() => {
+    setTimeLeft(time);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [indexToShow]);
 
   return <div>Time: {timeLeft} seconds</div>;
 }

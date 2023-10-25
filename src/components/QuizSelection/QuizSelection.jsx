@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import quizSelectionStyles from "./QuizSelection.module.css";
 import quizSelectionData from "../../data/quizSelectionData";
 
-function ElementMenu() {
+function QuizSelection() {
   return (
     <section className={quizSelectionStyles.container}>
       {quizSelectionData.map((quizSelectionDataItem) => (
         
-        <div className={quizSelectionStyles.content}><Link
-          key={quizSelectionDataItem.id}
+        <div className={quizSelectionStyles.content}  key={quizSelectionDataItem.id}><Link
+        
           to={`/quiz/${quizSelectionDataItem.id}`}
           className={quizSelectionStyles.link}
         >
@@ -26,4 +26,4 @@ function ElementMenu() {
   );
 }
 
-export default ElementMenu;
+export default QuizSelection;

@@ -55,10 +55,7 @@ function Question({ setQuizState, id }) {
       if (indexToShow + 1 === randomQuestion.length) {
         setQuizState("score");
       }
-      setIndexToShow(indexToShow + 1);
-      setChecked(false);
-      setShowCheckButton(true);
-      setClicked(null);
+      nextQuestion();
     } else {
       setChecked(null);
       setRestart(true);
@@ -67,6 +64,13 @@ function Question({ setQuizState, id }) {
     }
   };
 
+  const nextQuestion = () => {
+    console.log('efik')
+    setIndexToShow(indexToShow + 1);
+    setChecked(false);
+    setShowCheckButton(true);
+    setClicked(null);
+  };
 
   return (
     <>
@@ -76,7 +80,10 @@ function Question({ setQuizState, id }) {
             <Progres
               indexToShow={indexToShow}
               questionsLength={questionsLength}
-              handleTimeUp={()=>{alert('Koniec')}}
+              handleTimeUp={() => {
+                nextQuestion();
+              }}
+              time={currentQuestion.time}
             />
             <div className={questionStyles.question}>
               {currentQuestion.question}

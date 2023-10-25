@@ -1,7 +1,7 @@
 import progresStyles from "./Progres.module.css";
 import Time from "./Time";
 
-function Progres({ indexToShow, questionsLength, handleTimeUp }) {
+function Progres({ indexToShow, questionsLength, handleTimeUp, time }) {
  
 
   return (
@@ -10,7 +10,7 @@ function Progres({ indexToShow, questionsLength, handleTimeUp }) {
         question {indexToShow + 1} of {questionsLength}
       </div>
       <div>
-    <Time onTimeUp={handleTimeUp} indexToShow={indexToShow} />
+    <Time handleTimeUp={handleTimeUp} time={time} indexToShow={indexToShow} />
       </div>
     </section>
   );
