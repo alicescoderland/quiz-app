@@ -65,7 +65,6 @@ function Question({ setQuizState, id }) {
   };
 
   const nextQuestion = () => {
-    console.log('efik')
     setIndexToShow(indexToShow + 1);
     setChecked(false);
     setShowCheckButton(true);
