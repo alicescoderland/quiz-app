@@ -61,6 +61,7 @@ function Question({ setQuizState, id }) {
       setRestart(true);
       setIndexToShow(0);
       setScore(0);
+      setQuizState("quiz");
     }
   };
 
