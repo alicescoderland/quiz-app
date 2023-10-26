@@ -19,3 +19,10 @@
 .title span:nth-child(2) {
   color: grey;
 }
+
+/* desktop */
+@media (min-width: 992px) {
+  .title span:first-child {
+    font-size: 3em;
+  }
+}

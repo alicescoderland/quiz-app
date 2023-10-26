@@ -41,3 +41,12 @@ button {
   );
   color: black;
 }
+
+/* extra small */
+@media (max-width: 281px) {
+  button {
+    width: 260px;
+    height: 45px;
+    font-size: 1.2em;
+  }
+}

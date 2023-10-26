@@ -8,7 +8,8 @@
   font-size: 1.6em;
   font-weight: bold;
   margin: 1em;
-  margin-top: 0;
+  margin-top: 0.75em;
+ text-align: center;
 }
 
 .questionNubmers {
@@ -18,7 +19,7 @@
 
 .navigateBtn {
   width: 350px !important;
-  height: 55px ;
+  height: 55px;
   background-color: var(--whiteColor);
   border-radius: 10px;
   font-size: 1.4em;
@@ -41,3 +42,19 @@
   margin: 0;
 }
 
+/* extra small */
+@media (max-width: 281px) {
+  .question {
+    font-size: 1.3em;
+  }
+
+  .navigateBtn {
+    width: 270px !important;
+    height: 50px;
+    font-size: 1.2em;
+  }
+
+  .score {
+    font-size: 1.5em;
+  }
+}

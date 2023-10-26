@@ -64,11 +64,39 @@
 
 .elements img {
   position: absolute;
-  top: -100px;
+  top: -35px;
   right: 15px;
   width: 30% !important;
 }
 
 .link {
   text-decoration: none;
+}
+
+/* extra small */
+@media (max-width: 281px) {
+  .content {
+    width: 260px;
+  }
+}
+
+/* desktop */
+@media (min-width: 992px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .content {
+    min-height: 200px;
+    width: 40%;
+    margin: 2em;
+    margin-top: 3.5em;
+  }
+
+  .elements img {
+    top: -70px;
+  }
 }
