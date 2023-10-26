@@ -94,6 +94,11 @@
     width: 40%;
     margin: 2em;
     margin-top: 3.5em;
+    transition: color 0.3s, transform 0.2s;
+  }
+
+  .content:hover{
+    transform: scale(1.1) translate(5px, 5px);
   }
 
   .elements img {
