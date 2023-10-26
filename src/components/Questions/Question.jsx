@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Answer from "./Answer";
 import questionsData from "../../data/questionsData.json";
 import questionStyles from "./Question.module.css";
@@ -107,6 +108,9 @@ function Question({ setQuizState, id }) {
                 {score}/{questionsLength}
               </p>
             </div>
+            <Link to="/">
+              <button className={questionStyles.goToMenuBtn}>Go to menu</button>{" "}
+            </Link>
             <button
               className={questionStyles.navigateBtn}
               onClick={handleNextClick}
