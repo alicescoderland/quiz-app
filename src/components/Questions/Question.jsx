@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Answer from "./Answer";
-import questionsData from "../../data/questionsData.json";
+import questionsData from "../../data/questionsData";
 import questionStyles from "./Question.module.css";
 import Progres from "../Progres/Progres";
 
@@ -18,7 +18,7 @@ const getRandomQuestion = (questions) => {
 };
 
 function Question({ setQuizState, id }) {
-  const [randomQuestion] = useState(getRandomQuestion(questionsData[id]));
+  const [randomQuestion] = useState(getRandomQuestion(questionsData[id].questions));
   const [indexToShow, setIndexToShow] = useState(0);
   const [clicked, setClicked] = useState(null);
   const [checked, setChecked] = useState(false);

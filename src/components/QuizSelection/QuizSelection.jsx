@@ -7,20 +7,21 @@ function QuizSelection() {
   return (
     <section className={quizSelectionStyles.container}>
       {quizSelectionData.map((quizSelectionDataItem) => (
-        
-        <div className={quizSelectionStyles.content}  key={quizSelectionDataItem.id}><Link
-        
-          to={`/quiz/${quizSelectionDataItem.id}`}
-          className={quizSelectionStyles.link}
+        <div
+          className={quizSelectionStyles.content}
+          key={quizSelectionDataItem.id}
         >
-          
+          <Link
+            to={`/quiz/${quizSelectionDataItem.id}`}
+            className={quizSelectionStyles.link}
+          >
             <div className={quizSelectionStyles.elements}>
               <img src={quizSelectionDataItem.img} alt="logo" />
               <span>{quizSelectionDataItem.level}</span>
               <span>{quizSelectionDataItem.name}</span>
             </div>
-        </Link>
-          </div>
+          </Link>
+        </div>
       ))}
     </section>
   );

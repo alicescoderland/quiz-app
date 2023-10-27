@@ -1,6 +1,6 @@
 import htmlImg from "../assets/image/html-logo.png";
 import cssImg from "../assets/image/css-logo.png";
-import jsImg from "../assets/image/javascript-logo2.png";
+import jsImg from "../assets/image/javascript-logo.png";
 import reactImg from "../assets/image/react-logo.png";
 
 const quizSelection= [
