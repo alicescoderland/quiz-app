@@ -3,18 +3,6 @@
   align-items: center;
 }
 
-button {
-  width: 350px;
-  height: 55px;
-  background-color: var(--whiteColor);
-  border: none;
-  border-radius: 10px;
-  font-size: 1.4em;
-  color: var(--blueColor);
-  font-weight: bold;
-  margin: 0.35em;
-}
-
 .correct {
   background: radial-gradient(
     circle,
@@ -40,13 +28,4 @@ button {
     rgba(255, 237, 63, 0.99) 100%
   );
   color: black;
-}
-
-/* extra small */
-@media (max-width: 281px) {
-  button {
-    width: 260px;
-    height: 45px;
-    font-size: 1.2em;
-  }
 }

@@ -1,4 +1,4 @@
-import QuizSelection from "../QuizSelection/QuizSelection";
+import Menu from "../components/menu/Menu";
 import homeStyles from "./Home.module.css";
 
 function Home() {
@@ -8,7 +8,7 @@ function Home() {
         <span>Let's Try</span>
         <span>Test your knowledge!</span>
       </div>
-      <QuizSelection />
+      <Menu />
     </section>
   );
 }

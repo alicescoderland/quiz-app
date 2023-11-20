@@ -3,7 +3,7 @@ import cssImg from "../assets/image/css-logo.png";
 import jsImg from "../assets/image/javascript-logo.png";
 import reactImg from "../assets/image/react-logo.png";
 
-const quizSelection= [
+const quizes= [
     {
       "id": 'html',
       "img": htmlImg,
@@ -30,4 +30,4 @@ const quizSelection= [
     }
   ]
 
-export default quizSelection;
+export default quizes;

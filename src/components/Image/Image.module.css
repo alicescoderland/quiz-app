@@ -26,6 +26,6 @@ img {
 /* desktop */
 @media (min-width: 992px) {
   img {
-    width: 15%;
+    width: 10%;
   }
 }

@@ -10,7 +10,7 @@ const questionsData = {
       {
         id: 1,
         question: "What is the capital of Turkey?",
-        answer: [
+        answers: [
           {
             id: 1,
             answer: "Antalya",
@@ -34,7 +34,7 @@ const questionsData = {
       {
         id: 2,
         question: "Who wrote the novel 'Crime and Punishment?",
-        answer: [
+        answers: [
           {
             id: 1,
             answer: "William Shakespeare",
@@ -58,7 +58,7 @@ const questionsData = {
       {
         id: 3,
         question: "What is the main ingredient of risotto?",
-        answer: [
+        answers: [
           {
             id: 1,
             answer: "Cottage cheese",
@@ -82,7 +82,7 @@ const questionsData = {
       {
         id: 4,
         question: "How many atriums does the human heart have?",
-        answer: [
+        answers: [
           {
             id: 1,
             answer: "One",
@@ -108,7 +108,7 @@ const questionsData = {
       {
         id: 1,
         question: "What is the capital of Poland?",
-        answer: [
+        answers: [
           {
             id: 1,
             answer: "Katowice",
@@ -132,7 +132,7 @@ const questionsData = {
       {
         id: 2,
         question: "Who wrote the novel 'Hobbit?",
-        answer: [
+        answers: [
           {
             id: 1,
             answer: "William Shakespeare",
@@ -156,7 +156,7 @@ const questionsData = {
       {
         id: 3,
         question: "What is the main ingredient of spaghetti?",
-        answer: [
+        answers: [
           {
             id: 1,
             answer: "Cottage cheese",
@@ -180,7 +180,7 @@ const questionsData = {
       {
         id: 4,
         question: "How many kidneys does the human have?",
-        answer: [
+        answers: [
           {
             id: 1,
             answer: "One",
@@ -206,7 +206,7 @@ const questionsData = {
       {
         id: 1,
         question: "What is the capital of Italy?",
-        answer: [
+        answers: [
           {
             id: 1,
             answer: "Venice",
@@ -230,7 +230,7 @@ const questionsData = {
       {
         id: 2,
         question: "Who wrote the novel 'Lalka'?",
-        answer: [
+        answers: [
           {
             id: 1,
             answer: "Bolesław Prus",
@@ -254,7 +254,7 @@ const questionsData = {
       {
         id: 3,
         question: "What is the main ingredient of pizza?",
-        answer: [
+        answers: [
           {
             id: 1,
             answer: "Cottage cheese",
@@ -278,7 +278,7 @@ const questionsData = {
       {
         id: 4,
         question: "How many fingers does the human have?",
-        answer: [
+        answers: [
           {
             id: 1,
             answer: "10",
@@ -303,7 +303,7 @@ const questionsData = {
       {
         id: 1,
         question: "What is the capital of Ukraine?",
-        answer: [
+        answers: [
           {
             id: 1,
             answer: "Lviv",
@@ -327,7 +327,7 @@ const questionsData = {
       {
         id: 2,
         question: "Who wrote the novel 'Zemsta'?",
-        answer: [
+        answers: [
           {
             id: 1,
             answer: "William Shakespeare",
@@ -351,7 +351,7 @@ const questionsData = {
       {
         id: 3,
         question: "What is the main ingredient of kebeb?",
-        answer: [
+        answers: [
           {
             id: 1,
             answer: "Cottage cheese",
@@ -375,7 +375,7 @@ const questionsData = {
       {
         id: 4,
         question: "How many spleens does the human have?",
-        answer: [
+        answers: [
           {
             id: 1,
             answer: "One",

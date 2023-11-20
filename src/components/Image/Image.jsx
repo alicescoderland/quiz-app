@@ -1,9 +1,9 @@
-import imgStyles from "./Image.module.css"
+import imageStyles from "./Image.module.css";
 
-function Image({img}) {
+function Image({ img }) {
   return (
-    <section className={imgStyles.container}>
-      <img className={imgStyles.img} src={img} alt="Logo" />
+    <section className={imageStyles.container}>
+      <img src={img} alt="Logo" />
     </section>
   );
 }

@@ -1,5 +1,6 @@
 import classNames from "classnames/bind";
 import answerStyles from "./Answer.module.css";
+import Button from "../button/Button";
 
 let cN = classNames.bind(answerStyles);
 
@@ -12,7 +13,7 @@ function Answer({ answer, handleAnswerClick, checked, isCorrect, clicked }) {
 
   return (
     <section className={answerStyles.container}>
-      <button
+      <Button
         className={className}
         key={answer.id}
         onClick={() => {
@@ -20,7 +21,7 @@ function Answer({ answer, handleAnswerClick, checked, isCorrect, clicked }) {
         }}
       >
         {answer.answer}
-      </button>
+      </Button>
     </section>
   );
 }
