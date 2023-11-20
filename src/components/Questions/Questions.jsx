@@ -45,22 +45,10 @@ function Question({
     }
 
     if (!checked && clicked) {
-      return (
-        <Button
-          onClick={handleCheckClick}
-        >
-          Check
-        </Button>
-      );
+      return <Button onClick={handleCheckClick}>Check</Button>;
     }
     if (clicked && checked) {
-      return (
-        <Button
-          onClick={handleNextClick}
-        >
-          Next
-        </Button>
-      );
+      return <Button onClick={handleNextClick}>Next</Button>;
     }
   };
 
@@ -70,7 +58,7 @@ function Question({
         currentQuestionIndex={currentQuestionIndex}
         questionsLength={questionsLength}
         handleTimeUp={() => {
-          // handleNextClick();
+          handleNextClick();
         }}
         time={time}
       />

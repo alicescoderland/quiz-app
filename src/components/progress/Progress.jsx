@@ -1,4 +1,4 @@
-import progresStyles from "./Progress.module.css";
+import progressStyles from "./Progress.module.css";
 import Time from "./Time";
 
 function Progres({
@@ -9,7 +9,7 @@ function Progres({
 }) {
   return (
     <section>
-      <div className={progresStyles.questionNubmers}>
+      <div className={progressStyles.questionNubmers}>
         question {currentQuestionIndex} of {questionsLength}
       </div>
       <div>
