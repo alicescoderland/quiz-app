@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Button from "../button/Button";
 import scoreStyles from "./Score.module.css";
 
-function Score({ score, paramsId }) {
+function Score({ score, quizId, difficulty }) {
   return (
     <section className={scoreStyles.container}>
       <div className={scoreStyles.score}>
@@ -11,7 +11,7 @@ function Score({ score, paramsId }) {
       </div>
 
       <div className={scoreStyles.buttons}>
-        <Link to={`/quiz/${paramsId}`} reloadDocument>
+        <Link to={`/quiz/${quizId}/${difficulty}`} reloadDocument>
           <Button>Try again</Button>
         </Link>
         <Link to="/">

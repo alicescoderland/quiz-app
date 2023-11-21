@@ -8,10 +8,10 @@ function Menu() {
     <section className={menuStyles.container}>
       {quizesData.map((quizesDataItem) => (
         <div className={menuStyles.content} key={quizesDataItem.id}>
-          <Link to={`/quiz/${quizesDataItem.id}`} className={menuStyles.link}>
+          <Link to={`/quiz/${quizesDataItem.id}/${quizesDataItem.difficulty}`} className={menuStyles.link}>
             <div className={menuStyles.elements}>
               <img src={quizesDataItem.img} alt="logo" />
-              <span>{quizesDataItem.level}</span>
+              <span>{quizesDataItem.difficulty}</span>
               <span>{quizesDataItem.name}</span>
             </div>
           </Link>

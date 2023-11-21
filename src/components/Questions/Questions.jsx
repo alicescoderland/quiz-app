@@ -2,13 +2,13 @@ import { useState } from "react";
 import questionStyles from "./Question.module.css";
 import Answer from "./Answer";
 import Button from "../button/Button";
-import Progres from "../progress/Progress";
+import Progress from "../progress/Progress";
 
 function Question({
   id,
   question,
   answers,
-  correctAnswerId,
+  correctAnswer,
   time,
   onNextQuestion,
   onAnswerSelect,
@@ -54,7 +54,7 @@ function Question({
 
   return (
     <section className={questionStyles.container}>
-      <Progres
+      <Progress
         currentQuestionIndex={currentQuestionIndex}
         questionsLength={questionsLength}
         handleTimeUp={() => {
@@ -62,16 +62,18 @@ function Question({
         }}
         time={time}
       />
-      <div key={id} className={questionStyles.question}>
-        {question}
-      </div>
+      <div
+        key={id}
+        className={questionStyles.question}
+        dangerouslySetInnerHTML={{ __html: question }}
+      ></div>
 
       <div className={questionStyles.answers}>
         {answers.map((answer) => (
           <Answer
-            key={answer.id}
+            key={answer}
             answer={answer}
-            isCorrect={checked ? answer.id === correctAnswerId : null}
+            isCorrect={checked ? answer === correctAnswer : null}
             clicked={clicked}
             handleAnswerClick={handleAnswerClick}
             checked={checked}

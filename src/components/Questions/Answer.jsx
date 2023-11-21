@@ -7,20 +7,20 @@ let cN = classNames.bind(answerStyles);
 function Answer({ answer, handleAnswerClick, checked, isCorrect, clicked }) {
   let className = cN({
     correct: checked && isCorrect,
-    unCorrect: checked && !isCorrect && clicked === answer.id,
-    click: clicked === answer.id && !checked,
+    unCorrect: checked && !isCorrect && clicked === answer,
+    click: clicked === answer && !checked,
   });
 
   return (
     <section className={answerStyles.container}>
       <Button
         className={className}
-        key={answer.id}
+        key={answer}
         onClick={() => {
-          handleAnswerClick(answer.id);
+          handleAnswerClick(answer);
         }}
       >
-        {answer.answer}
+        {answer}
       </Button>
     </section>
   );
