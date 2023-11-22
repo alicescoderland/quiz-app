@@ -64,8 +64,8 @@
 
 .elements img {
   position: absolute;
-  top: -35px;
-  right: 15px;
+  top: -40px;
+  right: 1px;
   width: 30% !important;
 }
 
@@ -74,9 +74,13 @@
 }
 
 /* extra small */
-@media (max-width: 281px) {
+@media (max-width: 320px) {
   .content {
     width: 260px;
+  }
+
+  .elements img {
+    width: 35% !important;
   }
 }
 

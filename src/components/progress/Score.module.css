@@ -23,7 +23,7 @@
 }
 
 /* extra small */
-@media (max-width: 281px) {
+@media (max-width: 320px) {
   .score {
     font-size: 1.5em;
   }

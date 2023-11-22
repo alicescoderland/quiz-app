@@ -20,9 +20,8 @@
   text-transform: uppercase;
 }
 /* extra small */
-@media (max-width: 281px) {
+@media (max-width: 320px) {
   .container img {
-    padding-top: 0;
     width: 45%;
   }
 }

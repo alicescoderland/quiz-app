@@ -15,3 +15,12 @@
 .answers {
   flex: 1;
 }
+
+
+/* extra small */
+@media (max-width: 320px) {
+  .question {
+    font-size: 1.1em;
+   
+  }
+}

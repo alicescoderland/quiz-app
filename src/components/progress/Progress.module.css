@@ -2,3 +2,15 @@
   font-size: 1em;
   margin-top: 2em;
 }
+
+/* extra small */
+@media (max-width: 320px) {
+  .questionNubmers {
+    font-size: 0.75em;
+    margin-top: 2em;
+  }
+
+  .time {
+    font-size: 0.6em;
+  }
+}

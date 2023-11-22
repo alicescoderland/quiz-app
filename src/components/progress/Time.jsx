@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import progressStyles from "./Progress.module.css";
 function Time({ time, currentQuestionIndex, handleTimeUp }) {
   const [timeLeft, setTimeLeft] = useState(time);
 
@@ -31,7 +31,7 @@ function Time({ time, currentQuestionIndex, handleTimeUp }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentQuestionIndex]);
 
-  return <div>Time: {timeLeft} seconds</div>;
+  return <div className={progressStyles.time}>Time: {timeLeft} seconds</div>;
 }
 
 export default Time;
