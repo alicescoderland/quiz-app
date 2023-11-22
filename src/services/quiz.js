@@ -1,6 +1,6 @@
 // utworzenie nowego quiz ktory zawiera pytania i odp. Cała logika.
 const API_URL = "https://opentdb.com/api.php";
-const ANSWER_TIME = 30;
+const ANSWER_TIME = 60;
 
 export class Quiz {
   Ready;
@@ -38,7 +38,7 @@ export class Quiz {
 
   #getQuestions(id, difficulty) {
     const params = new URLSearchParams();
-    params.append("amount", 2);
+    params.append("amount", 10);
     params.append("category", id.toString());
     params.append("type", "multiple");
     params.append("difficulty", difficulty);

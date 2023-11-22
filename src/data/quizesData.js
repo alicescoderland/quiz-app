@@ -20,7 +20,7 @@ const quizes = [
     id: 18,
     img: computersImg,
     difficulty: "easy",
-    name: "Science: Computers",
+    name: "Computers",
   },
   {
     id: 23,
