@@ -1,7 +1,7 @@
 import musicImg from "../assets/image/music-logo.png";
 import animalsImg from "../assets/image/animals-logo.png";
 import computersImg from "../assets/image/computer-logo.png";
-import politicsImg from "../assets/image/politics-logo.png";
+import historyImg from "../assets/image/history-logo.png";
 
 const quizes = [
   {
@@ -23,10 +23,10 @@ const quizes = [
     name: "Science: Computers",
   },
   {
-    id: 24,
-    img: politicsImg,
+    id: 23,
+    img: historyImg,
     difficulty: "easy",
-    name: "Politics",
+    name: "History",
   },
 ];
 
