@@ -20,7 +20,7 @@ function Answer({ answer, handleAnswerClick, checked, isCorrect, clicked }) {
           handleAnswerClick(answer);
         }}
       >
-        {answer}
+        <div dangerouslySetInnerHTML={{ __html: answer }}></div>
       </Button>
     </section>
   );
