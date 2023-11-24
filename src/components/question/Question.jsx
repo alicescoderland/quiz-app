@@ -7,7 +7,7 @@ import Progress from "../progress/Progress";
 function Question({
   id,
   question,
-  answers,
+  suffledAnswer,
   correctAnswer,
   time,
   onNextQuestion,
@@ -69,7 +69,7 @@ function Question({
       ></div>
 
       <div className={questionStyles.answers}>
-        {answers.map((answer) => (
+        {suffledAnswer.map((answer) => (
           <Answer
             key={answer}
             answer={answer}

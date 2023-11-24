@@ -1,6 +1,9 @@
 // utworzenie nowego quiz ktory zawiera pytania i odp. Cała logika.
 const API_URL = "https://opentdb.com/api.php";
 const ANSWER_TIME = 60;
+const shuffleArray = (array) => {
+  return array.sort(() => Math.random() - 0.5);
+};
 
 export class Quiz {
   Ready;
@@ -68,12 +71,21 @@ export class Quiz {
 
   #mapQuestions(rawQuestions) {
     const mappedQuestions = rawQuestions.map((rawQuestion, index) => {
+      const answers = [
+        ...rawQuestion.incorrect_answers,
+        rawQuestion.correct_answer,
+      ];
+
+    
+
+      const suffledAnswer = shuffleArray(answers);
+
       return {
         id: index,
         question: rawQuestion.question,
         correctAnswer: rawQuestion.correct_answer,
         time: ANSWER_TIME,
-        answers: [...rawQuestion.incorrect_answers, rawQuestion.correct_answer],
+        suffledAnswer,
       };
     });
 

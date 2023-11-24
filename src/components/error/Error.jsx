@@ -9,7 +9,7 @@ function Error({ quizId, difficulty }) {
       <img src={errorImage} alt="Error" />
       <div className={errorStyles.text}>
         <p>Error</p>
-        <p>Refresh the page!</p>
+        <p>Try again after 10 second!</p>
       </div>
       <Link to={`/quiz/${quizId}/${difficulty}`} reloadDocument>
         <Button>Refresh</Button>
